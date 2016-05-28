@@ -18,7 +18,7 @@ var CommentBox = React.createClass({
 var Comment = React.createClass({
 	rawMarkup: function() {
 		var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
-		return { __html: rawMarkup };
+		return {__html:rawMarkup };
 	},
   render: function() {
     return (
@@ -36,10 +36,7 @@ var CommentList = React.createClass({
   render: function() {
   	var commentNodes = this.props.data.map(
   		function(comment) {
-  			return
-  				( <Comment author={comment.author} key={comment.id} >
-  					{comment.text}
-  				</Comment> );
+  			return <Comment author={comment.author} key={comment.id}>{comment.text}</Comment>;
   		});
     return (
       <div className="commentList">
